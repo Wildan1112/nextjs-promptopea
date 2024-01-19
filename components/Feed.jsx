@@ -10,11 +10,11 @@ const Feed = () => {
   const handleSearchChange = (e) => {
     e.preventDefault();
   };
+
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await fetch("/api/prompt");
       const data = await res.json();
-
       setPosts(data);
     };
 
@@ -22,23 +22,22 @@ const Feed = () => {
   }, []);
   return (
     <section className="feed">
-      <form className="relative w-full flex-center">
+      <form action="" className="relative w-full flex-center">
         <input
           type="text"
-          placeholder="Search for a tag or username"
+          placeholder="Search for a tag or a username"
           value={searchText}
           onChange={handleSearchChange}
           className="search_input peer"
         />
       </form>
 
-      {/* Card */}
-      <PromptCardList data={posts} handleTagClick={() => {}} />
+      <PrompCardList data={posts} handleTagClick={() => {}} />
     </section>
   );
 };
 
-const PromptCardList = ({ data, handleTagClick }) => {
+const PrompCardList = ({ data, handleTagClick }) => {
   return (
     <div className="mt-16 prompt_layout">
       {data.map((post) => (
