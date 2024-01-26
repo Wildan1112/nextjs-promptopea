@@ -132,7 +132,7 @@
 }
 
 .form_input {
-  @apply flex w-full p-3 mt-2 text-sm text-slate-500 rounded-lg outline-0;
+  @apply flex w-full p-3 mt-2 text-sm rounded-lg text-slate-500 outline-0;
 }
 
 /* Nav Component */
